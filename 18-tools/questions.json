@@ -1,0 +1,662 @@
+[
+  {
+    "category": "AI Architecture Foundations",
+    "question": "What is the primary responsibility of an AI architect?",
+    "answer": "Translate business goals into secure, scalable, governed AI systems spanning workflow, data, models, APIs, infrastructure, evaluation, operations, and cost."
+  },
+  {
+    "category": "AI Architecture Foundations",
+    "question": "How is an AI architect different from an AI engineer?",
+    "answer": "An engineer commonly implements components; an architect owns system boundaries, nonfunctional requirements, integration strategy, trade-offs, governance, and evolution."
+  },
+  {
+    "category": "AI Architecture Foundations",
+    "question": "What should you clarify before proposing architecture?",
+    "answer": "Users, business objective, current workflow, success metrics, data, sensitivity, latency, availability, volume, integrations, budget, compliance, and human approval."
+  },
+  {
+    "category": "AI Architecture Foundations",
+    "question": "Why start with workflow instead of model choice?",
+    "answer": "The model is only one component. Starting with workflow prevents technology-first overengineering and reveals whether AI is actually needed."
+  },
+  {
+    "category": "AI Architecture Foundations",
+    "question": "When should you not use generative AI?",
+    "answer": "When deterministic rules, search, SQL, analytics, or traditional ML solve the problem more reliably, cheaply, and explainably."
+  },
+  {
+    "category": "AI Architecture Foundations",
+    "question": "What are nonfunctional requirements?",
+    "answer": "Qualities such as latency, scalability, security, privacy, reliability, availability, explainability, maintainability, and cost."
+  },
+  {
+    "category": "AI Architecture Foundations",
+    "question": "How do you choose build vs buy vs hybrid?",
+    "answer": "Compare differentiation, time-to-value, control, integration, risk, skills, cost, lock-in, governance, and exit strategy."
+  },
+  {
+    "category": "AI Architecture Foundations",
+    "question": "What does production readiness mean for AI?",
+    "answer": "Repeatable deployment, versioning, monitoring, evaluation, security, rollback, data governance, failure handling, cost controls, auditability, and ownership."
+  },
+  {
+    "category": "AI Architecture Foundations",
+    "question": "Why are AI systems probabilistic architectures?",
+    "answer": "Outputs can vary and fail non-deterministically, so validation, confidence handling, human review, guardrails, evaluation, and recovery are architectural requirements."
+  },
+  {
+    "category": "AI Architecture Foundations",
+    "question": "What artifacts should an AI architect create?",
+    "answer": "Context and component diagrams, data flow, trust boundaries, API contracts, model strategy, ADRs, evaluation plan, cost model, deployment topology, and runbook."
+  },
+  {
+    "category": "LLM and GenAI Architecture",
+    "question": "What are core components of an enterprise LLM app?",
+    "answer": "Experience layer, orchestration, prompt management, model gateway, retrieval/tools, identity, policy controls, observability, evaluation, and enterprise integrations."
+  },
+  {
+    "category": "LLM and GenAI Architecture",
+    "question": "What is a model gateway?",
+    "answer": "A stable abstraction over model providers that can handle auth, routing, quotas, retries, policy, logging, cost, and fallback."
+  },
+  {
+    "category": "LLM and GenAI Architecture",
+    "question": "Why avoid hard-coding one LLM provider?",
+    "answer": "Models change rapidly in quality, price, availability, terms, and capabilities. Abstraction reduces lock-in and enables routing and fallback."
+  },
+  {
+    "category": "LLM and GenAI Architecture",
+    "question": "Why is structured output important?",
+    "answer": "Schema-constrained output improves validation, downstream automation, integration reliability, and predictable error handling."
+  },
+  {
+    "category": "LLM and GenAI Architecture",
+    "question": "When should you use a smaller model?",
+    "answer": "For constrained classification, extraction, routing, summarization, or transformation tasks when it meets quality targets at lower latency and cost."
+  },
+  {
+    "category": "LLM and GenAI Architecture",
+    "question": "What is production prompt management?",
+    "answer": "Treat prompts as versioned assets with ownership, testing, metadata, deployment control, rollback, and evaluation."
+  },
+  {
+    "category": "LLM and GenAI Architecture",
+    "question": "How do you reduce LLM latency?",
+    "answer": "Smaller models, less context, caching, parallel independent calls, streaming, efficient retrieval, and fewer model hops."
+  },
+  {
+    "category": "LLM and GenAI Architecture",
+    "question": "How do you reduce LLM cost?",
+    "answer": "Model routing, smaller models, token budgets, caching, context compression, prompt optimization, batching, and deterministic tools where appropriate."
+  },
+  {
+    "category": "LLM and GenAI Architecture",
+    "question": "What is context-window management?",
+    "answer": "Selecting and compressing only the information needed for the task while avoiding irrelevant memory and overflow."
+  },
+  {
+    "category": "LLM and GenAI Architecture",
+    "question": "How do you design model-provider failover?",
+    "answer": "Provider adapters, common schemas, bounded retries, health checks, circuit breakers, fallback models, and regression evaluation of fallback behavior."
+  },
+  {
+    "category": "RAG Architecture",
+    "question": "Why use RAG?",
+    "answer": "To ground answers in private, current, or large knowledge sources, improve provenance, and support citations."
+  },
+  {
+    "category": "RAG Architecture",
+    "question": "What are the main RAG stages?",
+    "answer": "Ingestion, parsing, normalization, chunking, metadata, embedding, indexing, query transformation, retrieval, reranking, context assembly, generation, evaluation."
+  },
+  {
+    "category": "RAG Architecture",
+    "question": "How do you choose chunking?",
+    "answer": "Base it on document semantics and retrieval tasks, then compare approaches using a retrieval evaluation set."
+  },
+  {
+    "category": "RAG Architecture",
+    "question": "What is hybrid search?",
+    "answer": "Combining semantic vector retrieval with lexical search such as BM25 to improve recall for both meaning and exact terms."
+  },
+  {
+    "category": "RAG Architecture",
+    "question": "Why use reranking?",
+    "answer": "Initial retrieval optimizes recall and speed; reranking improves precision among candidate passages."
+  },
+  {
+    "category": "RAG Architecture",
+    "question": "How do you enforce document permissions?",
+    "answer": "Apply identity-aware ACL filters before content enters model context. Authorization must not rely on model behavior."
+  },
+  {
+    "category": "RAG Architecture",
+    "question": "How do you evaluate RAG?",
+    "answer": "Retrieval recall/precision, answer correctness, faithfulness, citation quality, task success, latency, and cost."
+  },
+  {
+    "category": "RAG Architecture",
+    "question": "What causes poor RAG answers?",
+    "answer": "Bad parsing, weak chunking, stale indexes, poor metadata, low recall, irrelevant retrieval, too much context, ambiguity, or weak prompting."
+  },
+  {
+    "category": "RAG Architecture",
+    "question": "What is query rewriting?",
+    "answer": "Transforming user language into retrieval-oriented queries that improve recall or add missing domain terminology."
+  },
+  {
+    "category": "RAG Architecture",
+    "question": "How do you keep RAG current?",
+    "answer": "Incremental ingestion, source-change detection, versioning, deletion propagation, timestamps, and event- or schedule-driven reindexing."
+  },
+  {
+    "category": "Agentic AI Architecture",
+    "question": "What makes a system agentic?",
+    "answer": "It can decide actions, select tools, maintain state, iterate, and adapt a plan rather than only producing a single response."
+  },
+  {
+    "category": "Agentic AI Architecture",
+    "question": "What risks grow with agent autonomy?",
+    "answer": "Incorrect actions, runaway loops, excess cost, unauthorized tool use, data leakage, inconsistent state, and difficult incident response."
+  },
+  {
+    "category": "Agentic AI Architecture",
+    "question": "What is planner-executor architecture?",
+    "answer": "A planner decomposes goals while executors carry out steps, separating reasoning about work from action execution."
+  },
+  {
+    "category": "Agentic AI Architecture",
+    "question": "When should you use multiple agents?",
+    "answer": "When responsibilities have distinct tools, policies, contexts, owners, or evaluation criteria\u2014not merely because multi-agent is fashionable."
+  },
+  {
+    "category": "Agentic AI Architecture",
+    "question": "What is a supervisor-agent pattern?",
+    "answer": "A supervisor interprets the request, delegates to specialists, tracks progress, and synthesizes results."
+  },
+  {
+    "category": "Agentic AI Architecture",
+    "question": "How do you prevent infinite loops?",
+    "answer": "Maximum steps, explicit stopping conditions, budgets, progress checks, duplicate-action detection, and human escalation."
+  },
+  {
+    "category": "Agentic AI Architecture",
+    "question": "How do you secure tool-using agents?",
+    "answer": "Least privilege, server-side authorization, strict schemas, allowlists, input validation, sandboxing, approvals, and audit logs."
+  },
+  {
+    "category": "Agentic AI Architecture",
+    "question": "What state should an agent persist?",
+    "answer": "Only state required for continuity or personalization, with retention rules; separate transient working memory from durable business records."
+  },
+  {
+    "category": "Agentic AI Architecture",
+    "question": "How do you evaluate agents?",
+    "answer": "Task completion, tool selection, argument accuracy, policy compliance, step efficiency, recovery behavior, latency, cost, and user outcomes."
+  },
+  {
+    "category": "Agentic AI Architecture",
+    "question": "What is human-in-the-loop design?",
+    "answer": "Human review or approval at defined risk points such as external communication, destructive actions, financial commitments, or low-confidence decisions."
+  },
+  {
+    "category": "Model Selection and Routing",
+    "question": "How do you select an enterprise LLM?",
+    "answer": "Evaluate task quality, latency, context, tool use, structured output, safety, deployment constraints, residency, cost, vendor terms, and operations."
+  },
+  {
+    "category": "Model Selection and Routing",
+    "question": "What is model routing?",
+    "answer": "Selecting models based on task, complexity, risk, latency, quality, or cost."
+  },
+  {
+    "category": "Model Selection and Routing",
+    "question": "What is cascade routing?",
+    "answer": "Try a smaller/cheaper model first and escalate to a stronger model when confidence or validation fails."
+  },
+  {
+    "category": "Model Selection and Routing",
+    "question": "Should every task use the largest model?",
+    "answer": "No. Use the smallest model that reliably satisfies the task requirements."
+  },
+  {
+    "category": "Model Selection and Routing",
+    "question": "How do you benchmark models fairly?",
+    "answer": "Same representative dataset, comparable prompts and interfaces, and measurement of quality, latency, reliability, safety, and cost."
+  },
+  {
+    "category": "Model Selection and Routing",
+    "question": "Where does traditional ML still fit?",
+    "answer": "Structured prediction, forecasting, anomaly detection, ranking, and classification where conventional models may be more efficient and controllable."
+  },
+  {
+    "category": "Model Selection and Routing",
+    "question": "When would you use a local model?",
+    "answer": "Privacy, offline operation, data residency, predictable cost, low latency, customization, or control requirements."
+  },
+  {
+    "category": "Model Selection and Routing",
+    "question": "What is model fallback?",
+    "answer": "Switching to an alternate model when the primary fails, is unavailable, rate-limited, too slow, or fails validation."
+  },
+  {
+    "category": "Model Selection and Routing",
+    "question": "What is model version risk?",
+    "answer": "Behavior can change across versions; use regression suites, monitoring, version pinning where possible, and rollback."
+  },
+  {
+    "category": "Model Selection and Routing",
+    "question": "What belongs in a model scorecard?",
+    "answer": "Accuracy, structured-output reliability, hallucination, safety, latency, cost, tool use, robustness, context performance, and availability."
+  },
+  {
+    "category": "Enterprise Integration",
+    "question": "How should agents access enterprise systems?",
+    "answer": "Through governed APIs, service layers, or approved tool interfaces rather than uncontrolled direct access."
+  },
+  {
+    "category": "Enterprise Integration",
+    "question": "Why use a tool abstraction layer?",
+    "answer": "It decouples agent reasoning from systems and centralizes authorization, validation, retries, logging, and adapters."
+  },
+  {
+    "category": "Enterprise Integration",
+    "question": "How do you safely integrate SaaS systems?",
+    "answer": "Supported APIs, delegated identity/service accounts, scoped permissions, rate limits, audit logging, and server-side business rules."
+  },
+  {
+    "category": "Enterprise Integration",
+    "question": "Why does idempotency matter?",
+    "answer": "Retries must not create duplicate side effects, especially for writes and transactions."
+  },
+  {
+    "category": "Enterprise Integration",
+    "question": "How do you handle long-running workflows?",
+    "answer": "Durable workflow engines, queues, checkpoints, job status APIs, and event-driven continuation."
+  },
+  {
+    "category": "Enterprise Integration",
+    "question": "Where should critical business rules live?",
+    "answer": "In deterministic services or policy engines, not only in prompts."
+  },
+  {
+    "category": "Enterprise Integration",
+    "question": "How should agents handle API failure?",
+    "answer": "Classify retryability, bounded retries, circuit breakers, preserved task state, safe partial results, and escalation."
+  },
+  {
+    "category": "Enterprise Integration",
+    "question": "What are contract tests?",
+    "answer": "Tests verifying integrations conform to expected schemas and behavior so upstream changes are detected early."
+  },
+  {
+    "category": "Enterprise Integration",
+    "question": "How do you propagate enterprise identity?",
+    "answer": "Carry authenticated user/service identity to tools and enforce authorization at every boundary; never trust model-generated identity claims."
+  },
+  {
+    "category": "Enterprise Integration",
+    "question": "Why separate read and write tools?",
+    "answer": "Writes require stronger scopes, validation, approval, idempotency, auditability, and rollback planning."
+  },
+  {
+    "category": "Data Architecture",
+    "question": "What data is unique to GenAI systems?",
+    "answer": "Prompts, context, embeddings, model outputs, feedback, conversation history, traces, and derived knowledge."
+  },
+  {
+    "category": "Data Architecture",
+    "question": "What is AI data lineage?",
+    "answer": "Tracking source, transformations, versions, model/prompt usage, and downstream outputs."
+  },
+  {
+    "category": "Data Architecture",
+    "question": "How should embeddings be governed?",
+    "answer": "As derived data that may encode sensitive information: access control, encryption, retention, deletion, and tenant boundaries still apply."
+  },
+  {
+    "category": "Data Architecture",
+    "question": "How do you handle PII in prompts?",
+    "answer": "Minimize, redact where possible, enforce purpose limitation, use approved providers, encrypt, and avoid unnecessary logging or retention."
+  },
+  {
+    "category": "Data Architecture",
+    "question": "What is a feature store?",
+    "answer": "A managed system to create, version, store, and serve ML features consistently for training and inference."
+  },
+  {
+    "category": "Data Architecture",
+    "question": "How do you prevent stale data?",
+    "answer": "Freshness metadata, source timestamps, cache TTLs, index versions, freshness SLAs, and explicit stale-data behavior."
+  },
+  {
+    "category": "Data Architecture",
+    "question": "What is schema evolution?",
+    "answer": "Managing data-format changes while preserving compatibility between producers and consumers."
+  },
+  {
+    "category": "Data Architecture",
+    "question": "How should conversation history be stored?",
+    "answer": "Separate durable records from temporary context, store only what is needed, and apply retention/deletion and access policies."
+  },
+  {
+    "category": "Data Architecture",
+    "question": "When should AI query a DB directly?",
+    "answer": "Prefer a governed semantic/service layer; tightly controlled read-only analytics may be acceptable with strict schemas and authorization."
+  },
+  {
+    "category": "Data Architecture",
+    "question": "Why is metadata important?",
+    "answer": "It enables filtering, authorization, provenance, freshness, lineage, ownership, and better retrieval."
+  },
+  {
+    "category": "Security and Privacy",
+    "question": "What is prompt injection?",
+    "answer": "An attack where untrusted content attempts to manipulate model behavior or override intended instructions."
+  },
+  {
+    "category": "Security and Privacy",
+    "question": "How do you defend against prompt injection?",
+    "answer": "Treat content as untrusted, isolate instructions, restrict tools, enforce auth server-side, validate outputs, and use least privilege."
+  },
+  {
+    "category": "Security and Privacy",
+    "question": "What is indirect prompt injection?",
+    "answer": "Malicious instructions hidden in documents, websites, email, or tool output that an AI later consumes."
+  },
+  {
+    "category": "Security and Privacy",
+    "question": "Why are guardrails not authorization?",
+    "answer": "Guardrails influence model output; authorization deterministically controls data and actions."
+  },
+  {
+    "category": "Security and Privacy",
+    "question": "What is least privilege for agents?",
+    "answer": "Each agent receives only the minimum tools, scopes, data, and actions required."
+  },
+  {
+    "category": "Security and Privacy",
+    "question": "How should secrets be managed?",
+    "answer": "Secrets manager or managed identity; never expose credentials to prompts, model context, logs, or source code."
+  },
+  {
+    "category": "Security and Privacy",
+    "question": "How do you reduce data exfiltration risk?",
+    "answer": "Context minimization, ACLs, restricted outbound tools, DLP, output review for sensitive flows, logging, and approvals."
+  },
+  {
+    "category": "Security and Privacy",
+    "question": "What belongs in an AI threat model?",
+    "answer": "Assets, actors, trust boundaries, data flows, prompt risks, tool risks, identity, exfiltration, supply chain, abuse cases, and incident controls."
+  },
+  {
+    "category": "Security and Privacy",
+    "question": "How do you secure vector stores?",
+    "answer": "Encryption, network controls, identity, metadata ACL filters, auditing, backups, retention, and deletion propagation."
+  },
+  {
+    "category": "Security and Privacy",
+    "question": "What is an agent kill switch?",
+    "answer": "A control to immediately disable risky agent actions or specific tools during an incident."
+  },
+  {
+    "category": "AI Governance",
+    "question": "What is AI governance?",
+    "answer": "Policies, roles, controls, evidence, and oversight ensuring AI is lawful, safe, reliable, secure, and aligned to business objectives."
+  },
+  {
+    "category": "AI Governance",
+    "question": "What belongs in an AI inventory?",
+    "answer": "Purpose, owner, models, data, vendors, users, risk class, integrations, regions, controls, evaluations, and lifecycle status."
+  },
+  {
+    "category": "AI Governance",
+    "question": "What is a model card?",
+    "answer": "Documentation of model purpose, intended use, limitations, evaluation context, performance, and risk."
+  },
+  {
+    "category": "AI Governance",
+    "question": "What is a system card?",
+    "answer": "Documentation for the complete AI solution including workflow, models, data, integrations, controls, users, risks, and evaluations."
+  },
+  {
+    "category": "AI Governance",
+    "question": "How do approval gates work?",
+    "answer": "Risk-triggered checkpoints block downstream action until an authorized reviewer records a decision and evidence."
+  },
+  {
+    "category": "AI Governance",
+    "question": "What is AI risk tiering?",
+    "answer": "Classifying systems by impact/risk so governance controls scale proportionally."
+  },
+  {
+    "category": "AI Governance",
+    "question": "Why is governance an architecture concern?",
+    "answer": "Identity, logging, retention, evaluation, approvals, and auditability require technical design, not only policy documents."
+  },
+  {
+    "category": "AI Governance",
+    "question": "What evidence should be retained?",
+    "answer": "Requirements, assessments, lineage, model versions, tests, evaluations, approvals, incidents, access logs, changes, and control results."
+  },
+  {
+    "category": "AI Governance",
+    "question": "How do you govern third-party AI?",
+    "answer": "Assess privacy, security, residency, data use, contractual terms, reliability, model-change policy, auditability, and exit strategy."
+  },
+  {
+    "category": "AI Governance",
+    "question": "What is responsible AI architecturally?",
+    "answer": "Embedding safety, privacy, fairness where relevant, transparency, accountability, human oversight, and measurable controls into the design."
+  },
+  {
+    "category": "Evaluation and Observability",
+    "question": "Evaluation vs observability?",
+    "answer": "Evaluation asks whether behavior is good enough; observability explains what happened operationally and why."
+  },
+  {
+    "category": "Evaluation and Observability",
+    "question": "What should be logged?",
+    "answer": "Model/version, latency, tokens, retrieval IDs, tool calls, errors, policy outcomes, eval signals, correlation IDs, while minimizing sensitive content."
+  },
+  {
+    "category": "Evaluation and Observability",
+    "question": "What are offline evaluations?",
+    "answer": "Repeatable tests against curated representative datasets before release and during regression testing."
+  },
+  {
+    "category": "Evaluation and Observability",
+    "question": "What are online evaluations?",
+    "answer": "Production signals such as user feedback, task success, acceptance, escalation, abandonment, and sampled human review."
+  },
+  {
+    "category": "Evaluation and Observability",
+    "question": "How do you evaluate hallucination?",
+    "answer": "Check claims against authoritative sources, measure unsupported statements, verify citations, and use human review in high-risk domains."
+  },
+  {
+    "category": "Evaluation and Observability",
+    "question": "What is an evaluation dataset?",
+    "answer": "Representative inputs paired with expected outputs, references, or scoring criteria."
+  },
+  {
+    "category": "Evaluation and Observability",
+    "question": "Why use golden cases?",
+    "answer": "Stable regression checks catch behavior changes across prompts, models, retrieval, and code."
+  },
+  {
+    "category": "Evaluation and Observability",
+    "question": "What is agent traceability?",
+    "answer": "Recording model decisions, tool calls, policy checks, inputs, outputs, and state transitions."
+  },
+  {
+    "category": "Evaluation and Observability",
+    "question": "What operational metrics matter?",
+    "answer": "Latency, availability, errors, token cost, model failures, tool failures, retrieval failures, queue depth, and timeouts."
+  },
+  {
+    "category": "Evaluation and Observability",
+    "question": "How do you detect quality drift?",
+    "answer": "Trend evaluation metrics, sample production interactions, compare versions, and alert on statistically or operationally meaningful degradation."
+  },
+  {
+    "category": "Scalability Reliability and Cost",
+    "question": "How do you scale LLM applications?",
+    "answer": "Stateless services, horizontal scaling, queues, caching, rate limits, efficient retrieval, quotas, and workload-aware routing."
+  },
+  {
+    "category": "Scalability Reliability and Cost",
+    "question": "What is backpressure?",
+    "answer": "Slowing, rejecting, or queueing work so downstream dependencies are not overloaded."
+  },
+  {
+    "category": "Scalability Reliability and Cost",
+    "question": "What is a circuit breaker?",
+    "answer": "Temporarily stopping calls to an unhealthy dependency to avoid cascading failure."
+  },
+  {
+    "category": "Scalability Reliability and Cost",
+    "question": "What is graceful degradation?",
+    "answer": "Preserving partial functionality or fallback behavior when models, retrieval, or integrations fail."
+  },
+  {
+    "category": "Scalability Reliability and Cost",
+    "question": "What can be cached?",
+    "answer": "Embeddings, stable retrieval, deterministic tool responses, prompt fragments, and safe repeated answers subject to freshness requirements."
+  },
+  {
+    "category": "Scalability Reliability and Cost",
+    "question": "How do you estimate AI cost?",
+    "answer": "Tokens, embedding/indexing, search, compute, storage, networking, observability, human review, and third-party integrations."
+  },
+  {
+    "category": "Scalability Reliability and Cost",
+    "question": "Why use agent budgets?",
+    "answer": "Caps on steps, tools, latency, or spend prevent runaway autonomous behavior."
+  },
+  {
+    "category": "Scalability Reliability and Cost",
+    "question": "What is rate limiting?",
+    "answer": "Controlling request volume per user, tenant, model, or dependency to protect reliability and cost."
+  },
+  {
+    "category": "Scalability Reliability and Cost",
+    "question": "How do you design multi-region AI?",
+    "answer": "Regional stateless services, data residency, model availability, index replication, failover, and defined consistency."
+  },
+  {
+    "category": "Scalability Reliability and Cost",
+    "question": "How do you handle provider outages?",
+    "answer": "Bounded retries, circuit breakers, fallback providers/models, cached or degraded behavior, clear messaging, and alerts."
+  },
+  {
+    "category": "Cloud Hybrid and Edge",
+    "question": "When choose cloud-hosted AI?",
+    "answer": "When managed model access, elasticity, speed, and reduced infrastructure burden matter and policy permits."
+  },
+  {
+    "category": "Cloud Hybrid and Edge",
+    "question": "When choose private/on-prem AI?",
+    "answer": "When sovereignty, disconnected operation, strict control, specialized latency, or regulation justify greater operational burden."
+  },
+  {
+    "category": "Cloud Hybrid and Edge",
+    "question": "What is hybrid AI?",
+    "answer": "Splitting workloads across cloud and private environments based on sensitivity, capability, cost, latency, and policy."
+  },
+  {
+    "category": "Cloud Hybrid and Edge",
+    "question": "What is edge AI?",
+    "answer": "Running inference near devices/users to reduce latency, bandwidth, or connectivity dependency."
+  },
+  {
+    "category": "Cloud Hybrid and Edge",
+    "question": "How do you design for data residency?",
+    "answer": "Classify data, route workloads regionally, restrict storage/processing locations, and continuously verify compliance."
+  },
+  {
+    "category": "Cloud Hybrid and Edge",
+    "question": "Challenges of self-hosted LLMs?",
+    "answer": "GPU capacity, serving, scaling, security, quantization, patching, model upgrades, observability, and specialized operations."
+  },
+  {
+    "category": "Cloud Hybrid and Edge",
+    "question": "How improve GPU utilization?",
+    "answer": "Batching, continuous batching, quantization, efficient serving, scheduling, and parallelism suited to the model/workload."
+  },
+  {
+    "category": "Cloud Hybrid and Edge",
+    "question": "What is a private endpoint?",
+    "answer": "A network path to managed services without traversing the public internet."
+  },
+  {
+    "category": "Cloud Hybrid and Edge",
+    "question": "Serverless vs containers?",
+    "answer": "Serverless favors bursty stateless workloads; containers provide greater runtime control and suit long-running or specialized dependencies."
+  },
+  {
+    "category": "Cloud Hybrid and Edge",
+    "question": "How do you build offline AI?",
+    "answer": "Local model, local retrieval/storage, constrained device resources, secure updates, and synchronization when connectivity returns."
+  },
+  {
+    "category": "AI Architecture Foundations",
+    "question": "How do you write an architecture decision record?",
+    "answer": "Capture context, decision, alternatives, rationale, consequences, owners, and review triggers."
+  },
+  {
+    "category": "LLM and GenAI Architecture",
+    "question": "What is semantic caching?",
+    "answer": "Caching responses or intermediate results based on semantic similarity, with strict freshness and permission boundaries."
+  },
+  {
+    "category": "RAG Architecture",
+    "question": "When would you use GraphRAG?",
+    "answer": "When entity relationships and multi-hop reasoning materially improve answers beyond passage retrieval."
+  },
+  {
+    "category": "RAG Architecture",
+    "question": "How do you design citations?",
+    "answer": "Preserve authoritative source IDs through retrieval and map answer claims to source passages."
+  },
+  {
+    "category": "Agentic AI Architecture",
+    "question": "What is tool hallucination?",
+    "answer": "The model invents a tool, capability, resource, or argument. Strict schemas and validation reduce the risk."
+  },
+  {
+    "category": "Agentic AI Architecture",
+    "question": "What is memory poisoning?",
+    "answer": "Incorrect or malicious content persists into memory and influences future decisions; validate, scope, expire, and make memory controllable."
+  },
+  {
+    "category": "Security and Privacy",
+    "question": "What is model supply-chain risk?",
+    "answer": "Risk from compromised models, adapters, libraries, datasets, registries, or dependencies."
+  },
+  {
+    "category": "Security and Privacy",
+    "question": "How do you enforce tenant isolation?",
+    "answer": "Separate identity, authorization, storage, indexes, caches, encryption, and logs according to tenancy boundaries."
+  },
+  {
+    "category": "AI Governance",
+    "question": "What is change management for AI?",
+    "answer": "Controlled review, testing, approval, deployment, traceability, and rollback for model, prompt, data, policy, and architecture changes."
+  },
+  {
+    "category": "AI Governance",
+    "question": "How do you define AI ownership?",
+    "answer": "Assign accountable business and technical owners for outcomes, controls, operations, risk acceptance, and lifecycle decisions."
+  },
+  {
+    "category": "Evaluation and Observability",
+    "question": "What is LLM-as-a-judge?",
+    "answer": "Using a model to score outputs; scalable but requires calibration, bias checks, and human validation."
+  },
+  {
+    "category": "Evaluation and Observability",
+    "question": "What is task success rate?",
+    "answer": "The percentage of user tasks completed correctly against business criteria; often more meaningful than isolated text-quality metrics."
+  }
+]
